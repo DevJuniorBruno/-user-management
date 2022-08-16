@@ -87,7 +87,7 @@
     <form id="form-user-create">
         <div class="form-group">
             <label>Nome</label> <br>
-            <input class="form-control" type="text" id="inputName" placeholder="Digite o nome do usuário">
+            <input class="form-control" type="text" name="name" id="inputName" placeholder="Digite o nome do usuário">
         </div>
         <div class="form-group">
             <label id="Inputgender" >Gênero</label>
@@ -106,7 +106,7 @@
         </div>
         <div class="form-group">
             <label for="inputNameBirth">Nascimento</label> <br>
-            <input type="date" name="birth" class="form-control" id="inputBirth">
+            <input type="date" name="birth" name="birth" class="form-control" id="inputBirth">
         </div>
         <div class="form-group">
             <label for="inputCountry">País</label> <br>
@@ -357,19 +357,19 @@
         </div>
         <div class="form-group">
             <label for="inputEmail">E-mail</label><br>
-            <input class="form-control" type="email" placeholder="Digite o e-mail" id="inputEmail">
+            <input class="form-control" type="email" name="email" placeholder="Digite o e-mail" id="inputEmail">
         </div>
         <div class="form-group">
             <label for="inputPassword">Senha</label> <br>
-            <input type="password" class="form-control" placeholder="Crie uma senha" id="inputPassword">
+            <input type="password" class="form-control" name="password" placeholder="Crie uma senha" id="inputPassword">
         </div>
         <div class="form-group">
             <label for="inputFile">Foto</label> <br>
-            <input type="file" name="foto" id="inputPhoto">
+            <input type="file" name="photo" id="inputPhoto">
         </div>
         <div class="form-group">
             <label>
-                <input type="checkbox" name="" id="inputAdm">  Administrador
+                <input type="checkbox" name="admCheck" id="inputAdm" checked>  Administrador
             </label>
         </div>   
 
@@ -378,7 +378,6 @@
         </div>     
     </form>
    </div>
-   <script src="controllers/UserController.js"></script>
    <script src="index.js"></script>
 </body>
 </html>

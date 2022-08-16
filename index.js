@@ -3,16 +3,22 @@ var gender = document.querySelector("#form-user-create [name=gender]:checked");
 var country = document.querySelector("#inputBirth").value;
 var birth = document.querySelector("#inputBirth").value;
 var email = document.querySelector("#inputEmail").value;
-var photo = document.querySelector("#inputPhoto")
+var password = document.querySelector("#inputPassword").value
+var photo = document.querySelector("#inputPhoto").value;
+var adm = document.querySelector("#inputAdm").value
 
 
 
+var fields = document.querySelectorAll("#form-user-create [name]" );
 
-console.log(nome);
-console.log(gender)
+fields.forEach(function(field, index) {
 
-document.querySelector(".btn-success").addEventListener('submit', event=>{
-    event.preventDefault();
-    alert("ola")
+    if(field.name == "gender") {
+        if(field.checked)console.log("Sim", field)
+        
+    } else if (field.name == "admCheck"){
+        console.log("sim", field)
+    } else {
+        console.log("Não")
+    }
 })
-
