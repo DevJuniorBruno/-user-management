@@ -26,12 +26,14 @@
     </nav>  
     <div class="title">
         <h1>Gerenciamento De Usuários</h1> <br>
-        <p>Lista de usuários</p>
+       
     </div>  
    <section>
     <table>
         <thead>
+            
             <tr>
+                <p>Lista de usuários</p>
                 <th class="foto">Foto</th>
                 <th class="nome">Nome</th>
                 <th class="email">E-mail</th>
@@ -82,16 +84,16 @@
     <div class="box-header">
         <h3 class="box-title">Novo Usuário</h3>
     </div>
-    <form>
+    <form id="form-user-create">
         <div class="form-group">
             <label>Nome</label> <br>
-            <input class="form-control" type="text" placeholder="Digite o nome do usuário">
+            <input class="form-control" type="text" id="inputName" placeholder="Digite o nome do usuário">
         </div>
         <div class="form-group">
-            <label id="gender" >Gênero</label>
+            <label id="Inputgender" >Gênero</label>
             <div class="radio">
                 <label for="inputNameGenderM">
-                    <input type="radio" name="gender" value="M">
+                    <input type="radio" name="gender" value="M" checked>
                     Masculino
                 </label>
             </div>
@@ -103,12 +105,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="inputNameBirth">Nascimento</label>
-            <input type="date" name="birth" class="form-control">
+            <label for="inputNameBirth">Nascimento</label> <br>
+            <input type="date" name="birth" class="form-control" id="inputBirth">
         </div>
         <div class="form-group">
             <label for="inputCountry">País</label> <br>
-            <select class="form-control" name="country">
+            <select class="form-control control" name="country" id="inputCountry">
                 <option value selected="selected">Selecione um país</option>
                 <option value="United States">United States</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -353,14 +355,30 @@
                     <option value="Zimbabwe">Zimbabwe</option>
             </select>
         </div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>
-        <div class="form-group"></div>        
+        <div class="form-group">
+            <label for="inputEmail">E-mail</label><br>
+            <input class="form-control" type="email" placeholder="Digite o e-mail" id="inputEmail">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Senha</label> <br>
+            <input type="password" class="form-control" placeholder="Crie uma senha" id="inputPassword">
+        </div>
+        <div class="form-group">
+            <label for="inputFile">Foto</label> <br>
+            <input type="file" name="foto" id="inputPhoto">
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="" id="inputAdm">  Administrador
+            </label>
+        </div>   
+
+        <div class="box-footer">
+            <button class="btn-success" type="submit">Salvar</button>
+        </div>     
     </form>
    </div>
-   
-   
-
+   <script src="controllers/UserController.js"></script>
+   <script src="index.js"></script>
 </body>
 </html>
