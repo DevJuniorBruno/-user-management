@@ -7,9 +7,19 @@ class UserController {
 
 
         this.onsubmit();
+        this.onEdit();
         
     }
 
+    onEdit(){
+        let btn = document.querySelector("#box-user-update .btn-cancel");
+        btn.addEventListener("click", event=>{
+            event.preventDefault();
+
+            this.showPanelCreate();
+        })
+        
+    }
     //método botao submit 
     onsubmit() {
         
@@ -23,19 +33,25 @@ class UserController {
 
             let values = this.getValues(this.formEl);
 
-            this.getPhoto((content)=>{
+            this.getPhoto().then(
+            content=>{
+                
                 values.photo = content;
-
                 this.addLine(values);
-
-            });
+            },(e=>{
+                console.error(e)
+            })
+            );
 
            
         })
     } //fim do escopo onSubmit onSU  
 
     //metodo com responsabilidade de carregar a foto
-    getPhoto(callback) {
+    getPhoto() {
+
+    return new Promise ((resolve, reject)=> {
+        
         //new FileReader = API para carregamento de foto, contendo metodos internos.
         let fileReader = new FileReader();
 
@@ -51,11 +67,22 @@ class UserController {
 
         fileReader.onload = () =>{
 
-            callback(fileReader.result);
+            resolve(fileReader.result);
 
         }
 
-        fileReader.readAsDataURL(file);
+        fileReader.onerror = (e)=>{
+          reject(e)
+        }
+
+        if(file){
+            fileReader.readAsDataURL(file)
+        } else {
+            resolve("dist/img/avatar.png");
+        }
+
+    })
+        
 
     }
 

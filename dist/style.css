@@ -95,6 +95,7 @@ button{
     cursor: pointer;
 }
 
+
 td img{
     margin-top:15px;
     width: 30px;
@@ -200,4 +201,7 @@ tr:nth-child(even) {
 }
 .btn-success:hover{
     background-color: rgb(79, 143, 77);
+}
+.btn-cancel {
+    background-color: red;
 }
