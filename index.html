@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/95f95d00f8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dist/style.css">
+    <script src="dist/moment.js"></script>
+    <script src="models/User.js" defer></script>
+    <script src="controllers/UserController.js" defer></script>
+    <script src="index.js" defer></script>
+    
     <title>Gestão de Usuários</title>
 </head>
 <body>
@@ -25,7 +30,7 @@
         </div> 
     </nav>  
     <div class="title">
-        <h1>Gerenciamento De Usuários</h1> <br>
+        <h1>Gestão de usuários</h1> <br>
        
     </div>  
    <section>
@@ -356,11 +361,11 @@
     </form>
    </div>
 
-   <div class="box-success" id="box-user-update" style="display: block;">
+   <div class="box-success" id="box-user-update" style="display: none;">
     <div class="box-header">
-        <h3 class="box-title">Novo Usuário</h3>
+        <h3 class="box-title box-edit">Editar Usuário</h3>
     </div>
-    <form id="form-user-create">
+    <form id="form-user-update">
         <div class="form-group">
             <label>Nome</label> <br>
             <input class="form-control" type="text" name="name" id="inputName" placeholder="Digite o nome do usuário">
@@ -640,12 +645,13 @@
             <input type="password" class="form-control" name="password" placeholder="Crie uma senha" id="inputPassword">
         </div>
         <div class="form-group">
+            <img src="dist/img/avatar.png" class="photo" style="width:30px ;">
             <label for="inputFile">Foto</label> <br>
             <input type="file" name="photo" id="inputPhoto">
         </div>
         <div class="form-group">
             <label>
-                <input type="checkbox" name="admin" id="inputAdm">  Administrador
+                <input type="checkbox" name="admin" id="admin">  Administrador
             </label>
         </div>   
 
@@ -655,9 +661,6 @@
         </div>     
     </form>
    </div>
-   <script src="dist/moment.js"></script>
-   <script src="models/User.js"></script>
-   <script src="controllers/UserController.js"></script>
-   <script src="index.js"></script>
+   
 </body>
 </html>

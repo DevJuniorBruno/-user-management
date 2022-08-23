@@ -205,3 +205,6 @@ tr:nth-child(even) {
 .btn-cancel {
     background-color: red;
 }
+.box-edit{
+    color: blue;
+}
