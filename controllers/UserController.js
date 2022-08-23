@@ -213,7 +213,10 @@ class UserController {
 
         let tr = this.getTr(dataUser);
 
-        this.tableEl.appendChild(tr)
+        this.tableEl.appendChild(tr);
+
+        this.updateCount();
+
 
     }
 
@@ -251,13 +254,13 @@ class UserController {
 
                 user.loadFromJSON(JSON.parse(tr.dataset.user));
 
-                tr.remove();
+                user.remove()
 
-                user.remove();
-                this.updateCount()
+                tr.remove();
+               
             }
 
-            
+            this.updateCount();
 
         })
 
